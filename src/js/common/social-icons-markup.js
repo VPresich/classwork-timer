@@ -1,4 +1,4 @@
-import spriteUrl from '/img/icons/icons.svg';
+import spriteUrl from '../../img/icons/icons.svg';
 
 const socialIconsMarkup = (icons, iconsAttr) => {
   const {

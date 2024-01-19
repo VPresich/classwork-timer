@@ -1,0 +1,2 @@
+import"./assets/styles-0c304372.js";import{c as t,a as c}from"./assets/create-msg-41c53447.js";import{b as r,c as s}from"./assets/constants-3538af6f.js";import"./assets/vendor-32231325.js";const n=()=>new Promise((o,e)=>setTimeout(()=>o(),2e3)),a=async()=>{console.log(r);const o=performance.now();t(r+`${o}`),await n();const e=performance.now();console.log(s),c(s+`${e-o}`)};a();
+//# sourceMappingURL=commonHelpers4.js.map

@@ -1,4 +1,4 @@
-import"./assets/styles-0c304372.js";import{f as a}from"./assets/fetch-data-async-9b6a0ad0.js";import{U as n}from"./assets/constants-3538af6f.js";import{c as s,a as c}from"./assets/create-msg-41c53447.js";import"./assets/vendor-32231325.js";function i(r){return r.reduce((t,{title:e,completed:o})=>t+`<li>
+import"./assets/styles-0c304372.js";import{f as a}from"./assets/fetch-data-async-9b6a0ad0.js";import{U as n}from"./assets/constants-7d677b7f.js";import{c as s,a as c}from"./assets/create-msg-41c53447.js";import"./assets/vendor-32231325.js";function i(r){return r.reduce((t,{title:e,completed:o})=>t+`<li>
         <div>${e}</div>
         <div>${o?"Done":"In progress"}</div>  
       </li>

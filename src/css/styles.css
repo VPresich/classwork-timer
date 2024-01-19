@@ -1,20 +1,42 @@
+
 @import url('./fonts.css');
 @import url('./reset.css');
-@import url('./vite-promo.css');
+@import url('./common.css');
 @import url('./header.css');
+@import url('./gallery.css');
+@import url('./team.css');
+@import url('./portfolio.css');
+@import url('./footer.css');
 
 :root {
-  font-family: Manrope, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Colors */
+  --slate: #434455; /*body text */
+  --iris: #4d5ae5; /* focused, active states, links */
+  --ocean: #404bbf; /* CTAs */
+  --navyblue: #2e2f42; /* shadows, headings*/
+  --lightslate: #8e8f99; /* helper text, deemphasized text */
+  --white: #ffffff; /* header, background, team card */
+  --cloud: #f4f4fd; /* light mode backgraund, light mode dialogs */
+  --cornflower: #e7e9fc; /* hairlines, accent collor */
+  --green: #31d0aa; /* valid fields, success messages*/
+  --dairy: #fcfcfc; /* modal background */
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+  /* Width */
+  --max-width-viewport-mobile: 767px;
+  --width-container-mobile: 320px;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  /* Paddings */
+  --padding-section-mobile: 96px;
+  --gap-mobile: 72px;
+
+  --width-photo-portfolio-mobile: 288px;
+
+  --min-width-viewport-tablet: 768px;
+  --width-container-tablet: 768px;
+
+  --min-width-viewport-desktop: 1158px;
+  --width-container-desktop: 1158px;
+  --max-width-image-background-desktop: 1440px;
+
+  --padding-section-desktop: 120px;
 }

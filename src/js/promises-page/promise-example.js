@@ -1,6 +1,6 @@
 import fetchData from '../common/fetch-data';
 import { URL_PLACEHOLDER } from '../common/constants';
-import getImages from './get-images';
+import getImages from '../images-page/get-images';
 import { createErrMsg, createOkMsg } from '../common/create-msg';
 
 // example 1

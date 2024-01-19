@@ -1,0 +1,31 @@
+body {
+  font-family: Manrope, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
+
+  color: #242424;
+  background-color: rgba(255, 255, 255, 0.87);
+}
+.container {
+  width: var(--width-container-mobile);
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: var(--width-container-tablet);
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .container {
+    width: var(--width-container-desktop);
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

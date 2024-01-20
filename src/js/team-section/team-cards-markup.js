@@ -20,6 +20,10 @@ const teamCardsMarkup = team =>
           <img src="${getImgUrl(TEAM_PHOTO_PATH, photo.fileName)}" 
                alt="${photo.alt}" width="264" height="260">
           <div class="team-card-label">
+              <p class="team-card-position">${getImgUrl(
+                TEAM_PHOTO_PATH,
+                photo.fileName
+              )}</p>
               <h3 class="team-card-name">${name}</h3>
               <p class="team-card-position">${position}</p>
               <ul class = "social-links">${socialIconsMarkup(

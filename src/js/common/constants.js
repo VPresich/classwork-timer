@@ -6,5 +6,5 @@ export const ERR_NO_IMAGES = 'No images. Try again';
 export const STR_TIMER_START = 'Timer start: ';
 export const STR_TIMER_STOP = 'Timer stop: ';
 
-export const TEAM_PHOTO_PATH = '/img/team/';
+export const TEAM_PHOTO_PATH = '../../img/team/';
 export const PORTFOLIO_PHOTO_PATH = '/img/portfolio/';

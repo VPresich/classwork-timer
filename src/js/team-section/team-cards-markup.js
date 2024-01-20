@@ -1,4 +1,4 @@
-import teamPhotoUrl from '../../img/team/card-1@1x.jpg';
+import { TEAM_PHOTO_PATH } from '../common/constants.js';
 import socialIconsMarkup from '../common/social-icons-markup.js';
 import socialIconsArr from '../data/social-icons.js';
 
@@ -16,7 +16,7 @@ const teamCardsMarkup = team =>
       strMarkup +
       `
         <li class="team-card">
-                  <img src="${teamPhotoUrl}" 
+                  <img src="${TEAM_PHOTO_PATH}${photo.fileName}" 
                       alt="${photo.alt}" width="264" height="260">
                   <div class="team-card-label">
                       <h3 class="team-card-name">${name}</h3>

@@ -2,7 +2,7 @@ const team = [
   {
     name: 'Mark Guerrero',
     photo: {
-      url: 'card-1@1x.jpg',
+      fileName: 'card-1@1x.jpg',
       alt: 'Photo of Mark Guerrero',
     },
     position: 'Product Designer',
@@ -10,7 +10,7 @@ const team = [
   {
     name: 'Tom Ford',
     photo: {
-      url: 'card-2@1x.jpg',
+      fileName: 'card-2@1x.jpg',
       alt: 'Photo of Tom Ford',
     },
     position: 'Frontend Developer',
@@ -18,7 +18,7 @@ const team = [
   {
     name: 'Camila Garcia',
     photo: {
-      url: 'card-3@1x.jpg',
+      fileName: 'card-3@1x.jpg',
       alt: 'Photo of Camila Garcia',
     },
     position: 'Marketing',
@@ -26,7 +26,7 @@ const team = [
   {
     name: 'Daniel Wilson',
     photo: {
-      url: 'card-4@1x.jpg',
+      fileName: 'card-4@1x.jpg',
       alt: 'Photo of Daniel Wilson',
     },
     position: 'UI Designer',

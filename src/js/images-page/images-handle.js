@@ -8,7 +8,7 @@ const listImagesRef = document.querySelector('.images-list');
 
 async function fetchImagesAndHandle() {
   try {
-    const images = await getImages('qqqqqq');
+    const images = await getImages('cats');
     onSuccess(images);
   } catch (error) {
     onError(error);

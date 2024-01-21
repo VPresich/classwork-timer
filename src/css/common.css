@@ -8,8 +8,9 @@ body {
   color: #242424;
   background-color: rgba(255, 255, 255, 0.87);
 }
+
 .container {
-  width: var(--width-container-mobile);
+  width: 375px;
   padding-left: 16px;
   padding-right: 16px;
   margin-left: auto;
@@ -18,13 +19,13 @@ body {
 
 @media screen and (min-width: 768px) {
   .container {
-    width: var(--width-container-tablet);
+    width: 768px;
   }
 }
 
 @media screen and (min-width: 1158px) {
   .container {
-    width: var(--width-container-desktop);
+    width: 1158px;
     padding-left: 15px;
     padding-right: 15px;
   }

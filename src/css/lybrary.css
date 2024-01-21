@@ -1,0 +1,75 @@
+.section-form,
+.section-books {
+  color: #ffff;
+  background-color: #2a2a2a;
+}
+
+form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 8px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+form h2 {
+  text-align: center;
+}
+
+input {
+  padding: 8px 16px;
+  font-size: 18px;
+  line-height: 1.2;
+  border-radius: 8px;
+}
+
+button[type='submit'] {
+  background-color: #3086b8;
+  font-size: 18px;
+  line-height: 1.2;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  text-transform: uppercase;
+  color: #ffff;
+  font-weight: 600;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.books-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  padding-top: 64px;
+  gap: 8px;
+}
+
+.book {
+  width: 300px;
+  background-color: rgb(125, 125, 156);
+  padding: 20px;
+  position: relative;
+}
+
+.pointer-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.book img {
+  width: 100%;
+}
+.delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

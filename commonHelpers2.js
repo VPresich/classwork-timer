@@ -1,4 +1,4 @@
-import"./assets/styles-f4b6f4a8.js";const r="/classwork-timer/assets/icons-ad39d7a4.svg",d=(i,s)=>{const{iconContainerClass:o,iconLinkClass:t,iconClass:n,iconWidth:a,iconHeight:e}=s;return i.reduce((l,c)=>l+`
+import"./assets/styles-2330ef24.js";const r="/classwork-timer/assets/icons-ad39d7a4.svg",d=(i,s)=>{const{iconContainerClass:o,iconLinkClass:t,iconClass:n,iconWidth:a,iconHeight:e}=s;return i.reduce((l,c)=>l+`
         <li class="${o}">
                 <a class="${t}" target="_blank" href="${c.url}">
                     <svg class="${n}" 

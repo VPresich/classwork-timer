@@ -4,11 +4,11 @@ import objectUpdateRequest from '../api/object-update-request';
 import objectDeleteRequest from '../api/object-delete-request';
 import { createOkMsg, createErrMsg } from '../common/create-msg';
 import booksGalleryCreate from './library-gallery-create';
-import LibraryInterface from './library-interface';
+import LibraryInterface from './library-interface-async';
 import { BASE_URL } from '../api/constants';
 
 const libInterface = new LibraryInterface({
-  addBtnSelector: '.create',
+  addFrmSelector: '.js-create-book-form',
   updateBtnClass: 'save',
   deleteBtnClass: 'delete',
   bookSelector: `.book`,
@@ -29,6 +29,9 @@ const libInterface = new LibraryInterface({
 
 // const libraryRef = document.querySelector('.books-list');
 // libraryRef.addEventListener('click', onLibraryClick);
+
+// const createBookForm = document.querySelector('.js-create-book-form');
+// createBookForm.addEventListener('submit', onCreateBookFormSubmit);
 
 // function onSuccess(books) {
 //   console.log(books);
@@ -88,18 +91,20 @@ const libInterface = new LibraryInterface({
 //     });
 // }
 
-//////////////////////////////////////
-// objectCreateRequest('book', {
-//   title: 'My Book',
-//   price: 84,
-//   author: 'My Author',
-//   pointer: 12,
-//   img: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1060.jpg',
-//   titleimage: 'https://loremflickr.com/640/480',
-// })
-//   .then(book => console.log(book))
-//   .catch(error => console.log(error.message));
+// function onCreateBookFormSubmit(event) {
+//   event.preventDefault();
+//   const formData = new FormData(event.currentTarget);
+//   const newBook = {};
+//   formData.forEach((value, key) => (newBook[key] = value));
+//   console.log(newBook);
+//   objectCreateRequest('book', newBook)
+//     .then(book => {
+//       allBooks.push(book);
+//       booksGalleryCreate(allBooks, libraryRef);
+//     })
+//     .catch(error => {
+//       onError(error);
+//     });
+// }
 
-// objectGetRequest('book')
-//   .then(books => console.log(books))
-//   .catch(error => console.log(error));
+// https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/713.jpg

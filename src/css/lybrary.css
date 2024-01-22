@@ -25,7 +25,9 @@ input {
   border-radius: 8px;
 }
 
-button[type='submit'] {
+.save,
+.create {
+  font-family: 'Manrope';
   background-color: #3086b8;
   font-size: 18px;
   line-height: 1.2;
@@ -34,7 +36,7 @@ button[type='submit'] {
   border: none;
   text-transform: uppercase;
   color: #ffff;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 button:hover {

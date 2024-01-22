@@ -13,11 +13,14 @@ async function getImages(strForSearch) {
   };
 
   const url = `${API_URL}?${new URLSearchParams(apiParams).toString()}`;
-
-  const data = await fetchData(url);
-  if (!data.hits.length) {
-    throw new Error(ERR_NO_IMAGES);
+  try {
+    const data = await fetchData(url);
+    if (!data.hits.length) {
+      throw new Error(ERR_NO_IMAGES);
+    }
+    return data.hits;
+  } catch (error) {
+    console.log(error.message);
   }
-  return data.hits;
 }
 export default getImages;

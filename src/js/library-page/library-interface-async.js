@@ -1,6 +1,6 @@
 import Library from './library.js';
 import DbApi from '../api/db-api.js';
-import { createOkMsg, createErrMsg } from '../common/create-msg';
+import { createOkMsg, createErrMsg } from '../common/create-msg.js';
 
 class LibraryInterface {
   #libraryObj;
@@ -86,21 +86,24 @@ class LibraryInterface {
     this.#onUpdateBtnClick(element);
   }
 
-  #onDeleteBtnClick(element) {
+  async #onDeleteBtnClick(element) {
     if (!element.classList.contains(this.#deleteBtnClass)) return;
-    this.#dbApi
-      .objectDeleteRequest('book', element.dataset.id)
-      .then(({ id }) => {
-        if (id) {
-          this.#libraryObj.removeBook(id);
-          this.#updateLibraryContainer();
-          createOkMsg("It's ok!");
-        }
-      })
-      .catch(error => this.#onError(error));
+    try {
+      const book = await this.#dbApi.objectDeleteRequest(
+        'book',
+        element.dataset.id
+      );
+      if (book) {
+        this.#libraryObj.removeBook(book.id);
+        this.#updateLibraryContainer();
+        createOkMsg("It's ok!");
+      }
+    } catch (error) {
+      this.#onError(error);
+    }
   }
 
-  #onUpdateBtnClick(element) {
+  async #onUpdateBtnClick(element) {
     if (!element.classList.contains(this.#updateBtnClass)) return;
     const bookId = element.dataset.id;
     const editedBook = this.#libraryObj.getBookById(bookId);
@@ -112,31 +115,33 @@ class LibraryInterface {
       pointer: inputRef.value,
     };
 
-    this.#dbApi
-      .ojectUpdateRequest('book', updateBook)
-      .then(({ id }) => {
-        if (id) {
-          this.#libraryObj.setBookById(bookId, updateBook);
-          createOkMsg("It's ok!");
-        }
-      })
-      .catch(error => this.#onError(error));
+    try {
+      const book = await this.#dbApi.ojectUpdateRequest('book', updateBook);
+      if (book) {
+        this.#libraryObj.setBookById(book.id, book);
+        createOkMsg("It's ok!");
+      }
+    } catch (error) {
+      this.#onError(error);
+    }
   }
 
-  onAddFrmSubmit(event) {
+  async onAddFrmSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const newBook = {};
     formData.forEach((value, key) => (newBook[key] = value));
 
-    this.#dbApi
-      .objectCreateRequest('book', newBook)
-      .then(book => {
+    try {
+      const book = await this.#dbApi.objectCreateRequest('book', newBook);
+      if (book) {
         this.#libraryObj.addBook(book);
         this.#updateLibraryContainer();
         createOkMsg("It's ok!");
-      })
-      .catch(error => this.#onError(error));
+      }
+    } catch (error) {
+      this.#onError(error);
+    }
   }
 }
 

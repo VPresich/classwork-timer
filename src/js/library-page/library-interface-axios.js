@@ -48,14 +48,12 @@ class LibraryInterface {
     this.#initHandles();
   }
 
-  #initData() {
-    this.#axiosInst
-      .get('book')
-      .then(res => {
-        this.#libraryObj.books = res.data;
-        this.#updateLibraryContainer();
-      })
-      .catch(error => this.#onError(error));
+  async #initData() {
+    const res = await this.#axiosInst.get('book');
+    if (res?.data) {
+      this.#libraryObj.books = res?.data;
+      this.#updateLibraryContainer();
+    }
   }
 
   #initHandles() {
@@ -89,20 +87,17 @@ class LibraryInterface {
     this.#onUpdateBtnClick(element);
   }
 
-  #onDeleteBtnClick(element) {
+  async #onDeleteBtnClick(element) {
     if (!element.classList.contains(this.#deleteBtnClass)) return;
-    this.#axiosInst
-      .delete(`book/${element.dataset.id}`)
-      .then(res => {
-        const book = res.data;
-        this.#libraryObj.removeBook(book.id);
-        this.#updateLibraryContainer();
-        createOkMsg("It's ok!");
-      })
-      .catch(error => this.#onError(error));
+    const res = await this.#axiosInst.delete(`book/${element.dataset.id}`);
+    if (res?.data) {
+      this.#libraryObj.removeBook(res?.data?.id);
+      this.#updateLibraryContainer();
+      createOkMsg("It's ok!");
+    }
   }
 
-  #onUpdateBtnClick(element) {
+  async #onUpdateBtnClick(element) {
     if (!element.classList.contains(this.#updateBtnClass)) return;
     const bookId = element.dataset.id;
     const editedBook = this.#libraryObj.getBookById(bookId);
@@ -114,35 +109,26 @@ class LibraryInterface {
       pointer: inputRef.value,
     };
 
-    this.#axiosInst
-      .put(`book/${updateBook.id}`, updateBook)
-      .then(res => {
-        const book = res.data;
-        if (book) {
-          this.#libraryObj.setBookById(book.id, book);
-          createOkMsg("It's ok!");
-        }
-      })
-      .catch(error => this.#onError(error));
+    const res = await this.#axiosInst.put(`book/${updateBook.id}`, updateBook);
+    if (res?.data) {
+      this.#libraryObj.setBookById(res?.data?.id, res?.data);
+      createOkMsg("It's ok!");
+    }
   }
 
-  onAddFrmSubmit(event) {
+  async onAddFrmSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const newBook = {};
     formData.forEach((value, key) => (newBook[key] = value));
+    console.log(newBook);
 
-    this.#axiosInst
-      .post('book', newBook)
-      .then(res => {
-        const book = res.data;
-        if (book) {
-          this.#libraryObj.addBook(book);
-          this.#updateLibraryContainer();
-          createOkMsg("It's ok!");
-        }
-      })
-      .catch(error => this.#onError(error));
+    const res = await this.#axiosInst.post('book', newBook);
+    if (res.data) {
+      this.#libraryObj.addBook(res.data);
+      this.#updateLibraryContainer();
+      createOkMsg("It's ok!");
+    }
   }
 }
 

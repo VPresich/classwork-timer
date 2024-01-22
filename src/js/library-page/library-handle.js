@@ -4,8 +4,8 @@ import objectUpdateRequest from '../api/object-update-request';
 import objectDeleteRequest from '../api/object-delete-request';
 import { createOkMsg, createErrMsg } from '../common/create-msg';
 import booksGalleryCreate from './library-gallery-create';
-import LibraryInterface from './library-interface-async';
-// import LibraryInterface from './library-interface-axios';
+// import LibraryInterface from './library-interface-async';
+import LibraryInterface from './library-interface-axios';
 import { BASE_URL } from '../api/constants';
 
 const libInterface = new LibraryInterface({
@@ -107,5 +107,3 @@ const libInterface = new LibraryInterface({
 //       onError(error);
 //     });
 // }
-
-// https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/713.jpg
